@@ -46,18 +46,20 @@ export class PokemonCatalogueService {
         })
       )
       .subscribe({
-        next: (pokemons: Pokemon[]) =>{
-          this._pokemons = pokemons;
+        next: (pokemons: any) =>{
+          this._pokemons = pokemons.results;
+          console.log("pokemons.results: ", pokemons.results);
+          console.log("pokemons: ", pokemons);
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
         }
       })
   }
-  public getAllPokemon(): Observable<Pokemon[]>{
-    return this.http.get<PokemonResponse>(apiPokemon + `?limit=100&offset=0`)
-    .pipe(map(response => [response.results]));
-  }
+  // public getAllPokemon(): Observable<Pokemon[]>{
+  //   return this.http.get<PokemonResponse>(apiPokemon + `?limit=100&offset=0`)
+  //   .pipe(map(response => [response.results]));
+  // }
 
 
 }
