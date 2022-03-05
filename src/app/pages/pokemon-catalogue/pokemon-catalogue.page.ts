@@ -10,7 +10,7 @@ import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.serv
 export class PokemonCataloguePage implements OnInit {
 
   get pokemons(): Pokemon[] {
-    return this.pokemonCatalogueService.pokemons;
+    return this.pokemonCatalogueService.getPokemons;
   }
 
   get loading(): boolean {
@@ -27,6 +27,14 @@ export class PokemonCataloguePage implements OnInit {
 
   ngOnInit(): void {
     this.pokemonCatalogueService.findAllPokemon();
+    setTimeout(() => {
+      console.log("this.pokemons: ",this.pokemons.length)
+      if(this.pokemons.length !== 0){
+        this.pokemonCatalogueService.setPokemons = this.pokemons;
+      }
+      console.log("after", this.pokemonCatalogueService.getPokemons)
+      
+    }, 100);
     // this.pokemonCatalogueService.getAllPokemon();
     
   }

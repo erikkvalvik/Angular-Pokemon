@@ -14,17 +14,7 @@ export class PokemonListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      console.log("pokemon url: ", this.pokemons[1].url)
-      console.log(this.pokemons.length)
-      for(let i = 0; i < this.pokemons.length; i++){
-        const url = this.pokemons[i].url;
-        const pokeId = url.split('/')[6];
-        this.pokemons[i].id = pokeId;
-        this.pokemons[i].sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokeId +".png";
-      }
-    }, 100);
-    console.log("waiting")
+    
   }
   
 
