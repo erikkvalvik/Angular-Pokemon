@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
+import { StorageUtil } from 'src/app/utils/storage.util';
 
 @Component({
   selector: 'app-pokemon-catalogue',
@@ -10,7 +11,11 @@ import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.serv
 export class PokemonCataloguePage implements OnInit {
 
   get pokemons(): Pokemon[] {
-    return this.pokemonCatalogueService.getPokemons;
+    if(StorageUtil.storageRead("pokemon-list") !== undefined){
+      return this.pokemonCatalogueService.getPokemons;
+    }else{
+      return this.pokemonCatalogueService.pokemons;
+    }
   }
 
   get loading(): boolean {
