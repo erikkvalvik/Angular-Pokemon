@@ -3,7 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## About the app
-In this app you can browse and catch multiple pokemon and add them to your trainer inventory. Once caught, you are able to view your pokemon on the trainer page, you are also able to release them.
+In this app you can browse and catch multiple pokemon and add them to your trainer inventory. Once caught, you are able to view your pokemon on the trainer page, you are also able to release them.  
+Everything should work according to the minimum requirements of this assignment. There is however a bug when using the logout button in the navbar: Once clicked the user data is deleted from session storage and the user is redirected to the landing page, but the navbar is not updated, and the user will be able to both see and use the buttons on the navbar. The buttons are not visible after refreshing though.
 
 
 ## Development server
