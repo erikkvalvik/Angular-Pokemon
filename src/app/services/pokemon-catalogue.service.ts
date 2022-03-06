@@ -83,14 +83,11 @@ export class PokemonCatalogueService {
             this._error = error.message;
           }
         })
-
     }
-
-      
-
-    
   }
-      
+      public pokemonById(id: string): Pokemon | undefined {
+        return this._pokemons.find((pokemon: Pokemon) => pokemon.id === id);
+      }
   }
   // public getAllPokemon(): Observable<Pokemon[]>{
   //   return this.http.get<PokemonResponse>(apiPokemon + `?limit=100&offset=0`)

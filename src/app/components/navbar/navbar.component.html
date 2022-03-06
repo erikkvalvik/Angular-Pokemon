@@ -1,0 +1,16 @@
+<nav class="bg-yellow-300 flex justify-between items-center p-4 sticky top-0 w-full z-50">
+    <span class="font-bold font-pokemon tracking-widest text-xl">Angular Pokémon!</span>
+    <ng-container *ngIf="trainer !== undefined">
+        <ul class="flex">
+            <li class="px-4">
+                <a routerLink="/pokemon">Pokémon</a>
+            </li>
+            <li class="px-4">
+                <a routerLink="/trainer">Trainer</a>
+            </li>
+            <li>
+                <a (click)="logOut()" routerLink="/">Logout</a>
+            </li>
+        </ul>
+    </ng-container>
+</nav>

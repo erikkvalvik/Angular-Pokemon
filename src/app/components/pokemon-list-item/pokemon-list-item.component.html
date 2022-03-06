@@ -1,9 +1,12 @@
-<li *ngIf="pokemon" class="mb-4 shadow">
+<li *ngIf="pokemon" class="mb-4 shadow bg-slate-300 rounded relative">
     <section class="p-4">
         <img [src]="pokemon.sprite" [alt]="pokemon.name" class="block w-72">
     </section>
     <section class="p-4 block">
-        <span class="text-xl">{{ pokemon.name }} with id {{pokemon.id}}</span>
-        <button class="shadow p-2 ml-2">Catch!</button>
+        <span class="text-xl capitalize">{{ pokemon.name }}</span>
+        <!-- <button class="shadow p-2 ml-2">Catch!</button> -->
     </section>
+    <app-catch-button [pokemonId]="pokemon.id"></app-catch-button>
 </li>
+
+<!-- https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png -->

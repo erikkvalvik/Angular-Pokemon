@@ -1,0 +1,17 @@
+<aside class="absolute bottom-1 right-4">
+    <button 
+        (click)="onCatchClick()"
+        type="button" 
+        class="group w-14 rounded flex justify-center items-center flex-col relative"
+    >
+        <img class="w-14" [src]="pokeBallUrl" alt="">
+        <span *ngIf="isCaught; then caught else notCaught"></span>
+        <ng-template #caught>
+            <span class="opacity-100 group-hover:opacity-0">Caught</span>
+            <span class="opacity-0 group-hover:opacity-100 absolute left-0 right-0 bottom-1">Release?</span>
+        </ng-template>
+        <ng-template #notCaught>
+            <span class="opacity-0 group-hover:opacity-100">Catch!</span>
+        </ng-template>
+    </button>
+</aside>
