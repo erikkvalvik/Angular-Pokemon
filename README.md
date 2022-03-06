@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
+## About the app
+In this app you can browse and catch multiple pokemon and add them to your trainer inventory. Once caught, you are able to view your pokemon on the trainer page, you are also able to release them.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
